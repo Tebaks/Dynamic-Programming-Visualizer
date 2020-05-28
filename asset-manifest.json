@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/dynamic-programming-visualizer/static/css/main.d61b3ce4.chunk.css",
+    "main.js": "/dynamic-programming-visualizer/static/js/main.adcaa7f3.chunk.js",
+    "main.js.map": "/dynamic-programming-visualizer/static/js/main.adcaa7f3.chunk.js.map",
+    "runtime-main.js": "/dynamic-programming-visualizer/static/js/runtime-main.7c7797a7.js",
+    "runtime-main.js.map": "/dynamic-programming-visualizer/static/js/runtime-main.7c7797a7.js.map",
+    "static/js/2.8d2b28f2.chunk.js": "/dynamic-programming-visualizer/static/js/2.8d2b28f2.chunk.js",
+    "static/js/2.8d2b28f2.chunk.js.map": "/dynamic-programming-visualizer/static/js/2.8d2b28f2.chunk.js.map",
+    "index.html": "/dynamic-programming-visualizer/index.html",
+    "precache-manifest.2529cd65f97d3383f260cabfb9f7f3e3.js": "/dynamic-programming-visualizer/precache-manifest.2529cd65f97d3383f260cabfb9f7f3e3.js",
+    "service-worker.js": "/dynamic-programming-visualizer/service-worker.js",
+    "static/css/main.d61b3ce4.chunk.css.map": "/dynamic-programming-visualizer/static/css/main.d61b3ce4.chunk.css.map",
+    "static/js/2.8d2b28f2.chunk.js.LICENSE.txt": "/dynamic-programming-visualizer/static/js/2.8d2b28f2.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/dynamic-programming-visualizer/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7c7797a7.js",
+    "static/js/2.8d2b28f2.chunk.js",
+    "static/css/main.d61b3ce4.chunk.css",
+    "static/js/main.adcaa7f3.chunk.js"
+  ]
+}
