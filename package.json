@@ -2,7 +2,7 @@
   "name": "dynamic-programming-visualizer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://tebaks.github.io/dynamic-programming-visualizer",
+  "homepage": "https://tebaks.github.io/Dynamic-Programming-Visualizer/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
