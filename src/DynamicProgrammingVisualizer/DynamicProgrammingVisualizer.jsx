@@ -150,10 +150,13 @@ export default class DynamicProgrammingVisualizer extends Component {
         const { grid } = this.state;
         return (
             <>
-                <AwesomeButtonSocial type="github" style={{}} >
+
+                <AwesomeButtonSocial target="_blank" href="https://github.com/Tebaks" type="github"  >
                     Other Works
             </AwesomeButtonSocial>
-                <AwesomeButtonSocial type="linkedin" style={{}} >
+
+
+                <AwesomeButtonSocial target="_blank" href="https://www.linkedin.com/in/kenanabbak/" type="linkedin" >
                     Kenan Abbak
             </AwesomeButtonSocial>
 
