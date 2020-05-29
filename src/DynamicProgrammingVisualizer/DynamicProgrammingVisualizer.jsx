@@ -9,21 +9,31 @@ export default class DynamicProgrammingVisualizer extends Component {
         this.state = {
             grid: [],
             isWorking: false,
-            money: 12,
+            money: 14,
+            two: 2,
         };
     }
 
     componentDidMount() {
+        console.log(this.state.money)
         const grid = getInitialGrid(this.state.money);
         this.setState({ grid });
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.money !== prevState.money) {
+            console.log(this.state.money)
+            const money = this.state.money
+            const grid = getInitialGrid(money);
+            this.setState({ grid });
+        }
     }
     clear() {
         if (this.state.isWorking !== true) {
             const { grid } = this.state
             const money = this.state.money
-            for (let row = 0; row < 5; row++) {
+            for (let row = 1; row < 5; row++) {
 
-                for (let col = 0; col < money + 2; col++) {
+                for (let col = 1; col < parseInt(money) + parseInt(2); col++) {
                     setTimeout(() => {
                         const node = document.getElementById(`node-${grid[row][col].row}-${grid[row][col].col}`)
                         grid[row][col].number = 0;
@@ -38,9 +48,9 @@ export default class DynamicProgrammingVisualizer extends Component {
     }
     makeZero(money) {
         const { grid } = this.state
-        for (let row = 0; row < 5; row++) {
+        for (let row = 1; row < 5; row++) {
 
-            for (let col = 0; col < money + 2; col++) {
+            for (let col = 1; col < parseInt(money) + parseInt(2); col++) {
                 const node = document.getElementById(`node-${grid[row][col].row}-${grid[row][col].col}`)
                 grid[row][col].number = 0;
                 node.className = `node`;
@@ -53,7 +63,6 @@ export default class DynamicProgrammingVisualizer extends Component {
     getNumberOfWays(coins) {
         if (this.state.isWorking !== true) {
             const money = this.state.money
-            console.log(money)
             this.setState({ isWorking: true })
             this.makeZero(money)
             const { grid } = this.state
@@ -73,14 +82,14 @@ export default class DynamicProgrammingVisualizer extends Component {
                 grid[x][0].number = coins[x - 2]
                 document.getElementById(`node-${grid[x][0].row}-${grid[x][0].col}`).className = 'out-node';
             }
-            for (let y = 1; y < money + 2; y++) {
+            for (let y = 1; y < parseInt(money) + parseInt(2); y++) {
                 grid[0][y].number = y - 1;
                 document.getElementById(`node-${grid[0][y].row}-${grid[0][y].col}`).className = 'out-node';
             }
             this.setState({ grid })
 
             for (let x = 1; x < 5; x++) {
-                for (let y = 1; y < money + 2; y++) {
+                for (let y = 1; y < parseInt(money) + parseInt(2); y++) {
                     if (x > 1) {
                         if (y - coins[x - 2] < 1) {
                             setTimeout(() => {
@@ -106,15 +115,30 @@ export default class DynamicProgrammingVisualizer extends Component {
                     }, x * money * 150)
                 }
             }
+            var answerCol = 0;
+            var answerRow = 0;
+            var maxWay = 0;
+            setTimeout(() => {
+                for (let x = 1; x < parseInt(money) + parseInt(2); x++) {
+                    if (grid[4][x].number > maxWay) {
+                        answerCol = grid[4][x].col;
+                        answerRow = grid[4][x].row;
+                        maxWay = grid[4][x].number;
+                    }
+                }
+                document.getElementById(`node-${answerRow}-${answerCol}`).className = 'answer';
+            }, money * 150 * 4)
 
-            this.setState({ grid })
+
+
+
+
 
         }
 
     }
     myChangeHandler = (event) => {
         this.setState({ money: event.target.value })
-        console.log(event.target.value)
 
     }
 
@@ -123,6 +147,15 @@ export default class DynamicProgrammingVisualizer extends Component {
         const { grid } = this.state;
         return (
             <>
+
+                <div className="main-text">Find how many ways to make a change {this.state.money}$ with 1$, 2$ and 5$.</div>
+                <form>
+                    <p>Enter money amount:</p>
+                    <input
+                        type='text'
+                        onChange={this.myChangeHandler}
+                    />
+                </form>
                 <button onClick={() => this.clear()}>
                     Clear All
                 </button>
@@ -152,9 +185,12 @@ export default class DynamicProgrammingVisualizer extends Component {
 }
 const getInitialGrid = (money) => {
     const grid = [];
+    console.log("money" + money)
+
     for (let row = 0; row < 5; row++) {
         const currentRow = [];
-        for (let col = 0; col < money + 2; col++) {
+        for (let col = 0; col < parseInt(money) + parseInt(2); col++) {
+            console.log("col " + col)
             currentRow.push(createNode(col, row));
         }
         grid.push(currentRow);
