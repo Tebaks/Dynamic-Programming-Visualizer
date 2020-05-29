@@ -24,11 +24,14 @@ export default class DynamicProgrammingVisualizer extends Component {
     }
     componentDidUpdate(prevProps, prevState) {
         if (this.state.money !== prevState.money) {
-            console.log(this.state.money)
             const money = this.state.money
             const grid = getInitialGrid(money);
             this.setState({ grid });
         }
+    }
+
+    setGridClass(grid) {
+
     }
     clear() {
         if (this.state.isWorking !== true) {
@@ -57,8 +60,6 @@ export default class DynamicProgrammingVisualizer extends Component {
                 const node = document.getElementById(`node-${grid[row][col].row}-${grid[row][col].col}`)
                 grid[row][col].number = 0;
                 node.className = `node`;
-
-
             }
         }
         this.setState({ grid })
@@ -99,14 +100,14 @@ export default class DynamicProgrammingVisualizer extends Component {
                                 grid[x][y].number = grid[x - 1][y].number
                                 document.getElementById(`node-${grid[x][y].row}-${grid[x][y].col}`).className = 'node node-visited';
                                 this.setState({ grid })
-                            }, 100 * y + x * money * 100)
+                            }, 100 * y + (x - 1) * money * 100)
 
                         } else {
                             setTimeout(() => {
                                 grid[x][y].number = grid[x - 1][y].number + grid[x][y - coins[x - 2]].number
                                 document.getElementById(`node-${grid[x][y].row}-${grid[x][y].col}`).className = 'node node-visited';
                                 this.setState({ grid })
-                            }, 100 * y + x * money * 100)
+                            }, 100 * y + (x - 1) * money * 100)
 
                         }
                     }
@@ -130,7 +131,7 @@ export default class DynamicProgrammingVisualizer extends Component {
                     }
                 }
                 document.getElementById(`node-${answerRow}-${answerCol}`).className = 'answer';
-            }, money * 150 * 4)
+            }, money * 120 * 4)
 
 
 
@@ -189,7 +190,7 @@ export default class DynamicProgrammingVisualizer extends Component {
                                     row.map((node, nodeIdx) => {
                                         const { row, col, number } = node;
                                         return (
-                                            <Node key={nodeIdx} col={col} row={row} number={number}></Node>
+                                            <Node key={nodeIdx} col={col} row={row} number={number}>{number}</Node>
                                         );
                                     })}
                             </div>
