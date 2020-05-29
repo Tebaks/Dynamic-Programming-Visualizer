@@ -171,8 +171,9 @@ export default class DynamicProgrammingVisualizer extends Component {
 
                 <div className="main-text">Find how many ways to make a change {this.state.money}$ with 1$, 2$ and 5$</div>
                 <form>
-                    <p style={{ fontSize: "25px" }}>Enter money amount:</p>
+                    <p style={{ fontSize: "30px" }}>Enter money amount (1-25 optimum):</p>
                     <input
+                        style={{ fontSize: "20px", fontWeight: "bolder", border: "5px double black", textAlign: "center" }}
                         type='text'
                         onChange={this.myChangeHandler}
                     />
