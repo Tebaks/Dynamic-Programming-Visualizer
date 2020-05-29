@@ -141,7 +141,15 @@ export default class DynamicProgrammingVisualizer extends Component {
 
     }
     myChangeHandler = (event) => {
-        this.setState({ money: event.target.value })
+
+        var str = event.target.value
+
+        console.log(isNaN(str))
+        if (isNaN(str) || str === '' || this.state.isWorking) {
+
+        } else {
+            this.setState({ money: event.target.value })
+        }
 
     }
 
@@ -196,12 +204,10 @@ export default class DynamicProgrammingVisualizer extends Component {
 }
 const getInitialGrid = (money) => {
     const grid = [];
-    console.log("money" + money)
 
     for (let row = 0; row < 5; row++) {
         const currentRow = [];
         for (let col = 0; col < parseInt(money) + parseInt(2); col++) {
-            console.log("col " + col)
             currentRow.push(createNode(col, row));
         }
         grid.push(currentRow);
