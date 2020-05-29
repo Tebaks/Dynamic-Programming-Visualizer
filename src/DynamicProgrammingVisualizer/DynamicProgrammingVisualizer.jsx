@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import Node from './Node/Node';
+import { AwesomeButton } from "react-awesome-button";
+import "react-awesome-button/dist/styles.css";
+import { AwesomeButtonSocial } from 'react-awesome-button';
+import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss'
 
 import './DynamicProgrammingVisualizer.css';
 
@@ -9,8 +13,7 @@ export default class DynamicProgrammingVisualizer extends Component {
         this.state = {
             grid: [],
             isWorking: false,
-            money: 14,
-            two: 2,
+            money: 12,
         };
     }
 
@@ -120,7 +123,7 @@ export default class DynamicProgrammingVisualizer extends Component {
             var maxWay = 0;
             setTimeout(() => {
                 for (let x = 1; x < parseInt(money) + parseInt(2); x++) {
-                    if (grid[4][x].number > maxWay) {
+                    if (grid[4][x].number >= maxWay) {
                         answerCol = grid[4][x].col;
                         answerRow = grid[4][x].row;
                         maxWay = grid[4][x].number;
@@ -147,21 +150,26 @@ export default class DynamicProgrammingVisualizer extends Component {
         const { grid } = this.state;
         return (
             <>
+                <AwesomeButtonSocial type="github" style={{}} >
+                    Other Works
+            </AwesomeButtonSocial>
+                <AwesomeButtonSocial type="linkedin" style={{}} >
+                    Kenan Abbak
+            </AwesomeButtonSocial>
 
-                <div className="main-text">Find how many ways to make a change {this.state.money}$ with 1$, 2$ and 5$.</div>
+                <div className="main-text">Find how many ways to make a change {this.state.money}$ with 1$, 2$ and 5$</div>
                 <form>
-                    <p>Enter money amount:</p>
+                    <p style={{ fontSize: "25px" }}>Enter money amount:</p>
                     <input
                         type='text'
                         onChange={this.myChangeHandler}
                     />
                 </form>
-                <button onClick={() => this.clear()}>
-                    Clear All
-                </button>
-                <button onClick={() => this.getNumberOfWays([1, 2, 5])}>
+                <AwesomeButton size="large" style={{ right: "30px", top: "30px" }} type="primary" onPress={() => this.getNumberOfWays([1, 2, 5])}>
                     Find
-                </button>
+            </AwesomeButton>
+                <AwesomeButton size="large" style={{ left: "30px", top: "30px" }} type="secondary" onPress={() => this.clear()}> Clear</AwesomeButton>
+
                 <div className="grid">
                     {grid.map((row, rowIdx) => {
                         return (
