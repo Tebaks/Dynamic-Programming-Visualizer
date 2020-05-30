@@ -18,7 +18,6 @@ export default class DynamicProgrammingVisualizer extends Component {
     }
 
     componentDidMount() {
-        console.log(this.state.money)
         const grid = getInitialGrid(this.state.money);
         this.setState({ grid });
     }
@@ -30,9 +29,6 @@ export default class DynamicProgrammingVisualizer extends Component {
         }
     }
 
-    setGridClass(grid) {
-
-    }
     clear() {
         if (this.state.isWorking !== true) {
             const { grid } = this.state
@@ -90,6 +86,8 @@ export default class DynamicProgrammingVisualizer extends Component {
                 grid[0][y].number = y - 1;
                 document.getElementById(`node-${grid[0][y].row}-${grid[0][y].col}`).className = 'out-node';
             }
+            grid[0][0].number = "\\"
+            document.getElementById(`node-${grid[0][0].row}-${grid[0][0].col}`).className = 'out-node';
             this.setState({ grid })
 
             for (let x = 1; x < 5; x++) {
@@ -158,7 +156,7 @@ export default class DynamicProgrammingVisualizer extends Component {
     render() {
         const { grid } = this.state;
         return (
-            <>
+            <div className="background">
 
                 <AwesomeButtonSocial target="_blank" href="https://github.com/Tebaks" type="github"  >
                     Other Works
@@ -198,7 +196,8 @@ export default class DynamicProgrammingVisualizer extends Component {
                         );
                     })}
                 </div>
-            </>
+
+            </div >
         );
 
     }

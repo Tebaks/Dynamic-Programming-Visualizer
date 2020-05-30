@@ -5,9 +5,11 @@ import DynamicProgrammingVisualizer from './DynamicProgrammingVisualizer/Dynamic
 
 function App() {
   return (
+
     <div className="App">
       <DynamicProgrammingVisualizer></DynamicProgrammingVisualizer>
     </div>
+
   );
 }
 
