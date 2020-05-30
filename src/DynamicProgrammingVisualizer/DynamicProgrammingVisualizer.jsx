@@ -156,9 +156,9 @@ export default class DynamicProgrammingVisualizer extends Component {
     render() {
         const { grid } = this.state;
         return (
-            <div className="background">
 
-                <AwesomeButtonSocial target="_blank" href="https://github.com/Tebaks" type="github"  >
+            <>
+                <AwesomeButtonSocial target="_blank" href="https://github.com/Tebaks" type="github" >
                     Other Works
             </AwesomeButtonSocial>
 
@@ -179,7 +179,9 @@ export default class DynamicProgrammingVisualizer extends Component {
                 <AwesomeButton size="large" style={{ right: "30px", top: "30px" }} type="primary" onPress={() => this.getNumberOfWays([1, 2, 5])}>
                     Find
             </AwesomeButton>
-                <AwesomeButton size="large" style={{ left: "30px", top: "30px" }} type="secondary" onPress={() => this.clear()}> Clear</AwesomeButton>
+                <AwesomeButton size="large" style={{ left: "30px", top: "30px" }} type="secondary" onPress={() => this.clear()}>
+                    Clear
+            </AwesomeButton>
 
                 <div className="grid">
                     {grid.map((row, rowIdx) => {
@@ -196,8 +198,7 @@ export default class DynamicProgrammingVisualizer extends Component {
                         );
                     })}
                 </div>
-
-            </div >
+            </>
         );
 
     }
