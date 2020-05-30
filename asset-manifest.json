@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/Dynamic-Programming-Visualizer/static/css/main.55dc661b.chunk.css",
-    "main.js": "/Dynamic-Programming-Visualizer/static/js/main.53e6764d.chunk.js",
-    "main.js.map": "/Dynamic-Programming-Visualizer/static/js/main.53e6764d.chunk.js.map",
+    "main.css": "/Dynamic-Programming-Visualizer/static/css/main.1fa3ff77.chunk.css",
+    "main.js": "/Dynamic-Programming-Visualizer/static/js/main.5bb0eb6f.chunk.js",
+    "main.js.map": "/Dynamic-Programming-Visualizer/static/js/main.5bb0eb6f.chunk.js.map",
     "runtime-main.js": "/Dynamic-Programming-Visualizer/static/js/runtime-main.4212f37b.js",
     "runtime-main.js.map": "/Dynamic-Programming-Visualizer/static/js/runtime-main.4212f37b.js.map",
     "static/css/2.90bfaba5.chunk.css": "/Dynamic-Programming-Visualizer/static/css/2.90bfaba5.chunk.css",
     "static/js/2.7dadc704.chunk.js": "/Dynamic-Programming-Visualizer/static/js/2.7dadc704.chunk.js",
     "static/js/2.7dadc704.chunk.js.map": "/Dynamic-Programming-Visualizer/static/js/2.7dadc704.chunk.js.map",
     "index.html": "/Dynamic-Programming-Visualizer/index.html",
-    "precache-manifest.9336140e8ee3a6b5c7c730a834843868.js": "/Dynamic-Programming-Visualizer/precache-manifest.9336140e8ee3a6b5c7c730a834843868.js",
+    "precache-manifest.eb136a547a0a871df5fa2d0a7227a83c.js": "/Dynamic-Programming-Visualizer/precache-manifest.eb136a547a0a871df5fa2d0a7227a83c.js",
     "service-worker.js": "/Dynamic-Programming-Visualizer/service-worker.js",
     "static/css/2.90bfaba5.chunk.css.map": "/Dynamic-Programming-Visualizer/static/css/2.90bfaba5.chunk.css.map",
-    "static/css/main.55dc661b.chunk.css.map": "/Dynamic-Programming-Visualizer/static/css/main.55dc661b.chunk.css.map",
+    "static/css/main.1fa3ff77.chunk.css.map": "/Dynamic-Programming-Visualizer/static/css/main.1fa3ff77.chunk.css.map",
     "static/js/2.7dadc704.chunk.js.LICENSE.txt": "/Dynamic-Programming-Visualizer/static/js/2.7dadc704.chunk.js.LICENSE.txt",
+    "static/media/DynamicProgrammingVisualizer.css": "/Dynamic-Programming-Visualizer/static/media/background.892151d7.jpg",
     "static/media/logo.svg": "/Dynamic-Programming-Visualizer/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4212f37b.js",
     "static/css/2.90bfaba5.chunk.css",
     "static/js/2.7dadc704.chunk.js",
-    "static/css/main.55dc661b.chunk.css",
-    "static/js/main.53e6764d.chunk.js"
+    "static/css/main.1fa3ff77.chunk.css",
+    "static/js/main.5bb0eb6f.chunk.js"
   ]
 }
